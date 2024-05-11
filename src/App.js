@@ -30,26 +30,26 @@ function App() {
   console.log("user->",user);
   
 // const navigateTo=useNavigate();
-  const getUser = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}/getuser`,{withCredentials:true});
-      console.log("app response",response);
-      setUser(response.data.user);
-      setIsAuthorized(true);
-      toast.success(response.data.message);
-      // navigateTo('/');
+  // const getUser = async () => {
+  //   try {
+  //     const response = await axios.get(`${BASE_URL}/getuser`,{withCredentials:true});
+  //     console.log("app response",response);
+  //     setUser(response.data.user);
+  //     setIsAuthorized(true);
+  //     toast.success(response.data.message);
+  //     // navigateTo('/');
      
-    } catch (error) {
-      toast.success(error.response.data.message);
-      setIsAuthorized(false);
-      console.error('Error fetching user data:', error);
+  //   } catch (error) {
+  //     toast.success(error.response.data.message);
+  //     setIsAuthorized(false);
+  //     console.error('Error fetching user data:', error);
 
-    }
-  };
+  //   }
+  // };
   
-  useEffect(() => {
-    getUser();
-  }, [isAuthorized]);
+  // useEffect(() => {
+  //   getUser();
+  // }, [isAuthorized]);
 
   return (
    <>
